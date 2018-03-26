@@ -24,7 +24,8 @@ ENV DOCKER_ARCH x86_64
 ENV DOCKER_SHA256 692e1c72937f6214b1038def84463018d8e320c8eaf8530546c84c2f8f9c767d
 
 RUN set -ex; \
-	apk add --no-cache sudo; \
+	apk add --no-cache sudo python py-pip; \
+	pip install awscli; \
 	apk add --no-cache --virtual .fetch-deps \
 		curl \
 		tar \
